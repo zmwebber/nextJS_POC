@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
-import userRoutes from './routes/users.route.js';
+import card from './routes/card.route.js';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({ extended:true }));
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://JSBootcampShared:JSBootcampShared@dashboard.xmfinnm.mongodb.net/BootCamp?retryWrites=true&w=majority')
-app.use('/api', userRoutes);
+mongoose.connect('mongodb+srv://zwebber:Ev1gohem!23@cluster0.hodph83.mongodb.net/?retryWrites=true&w=majority')
+app.use('/api', card);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
