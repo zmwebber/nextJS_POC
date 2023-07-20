@@ -3,14 +3,8 @@ import { Button, FormGroup, Input, Paper } from "@mui/material";
 import React, { FormEvent, useState } from "react";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import defaultProfilePic from "../../app/images/default-profile-pic.jpeg";
-import { styled } from "@mui/system";
-import AppStyle from "../../App.module.scss";
-import TweetFormStyle from "./tweetFormStyle.module.scss";
 import { CardModel } from "@/app/models/CardModel";
 import { addCard } from "@/app/api/CardApi";
-import { redirect } from "next/dist/server/api-utils";
-import Home from "@/app/page";
 
 function CardForm(props: any) {
   const [eyebrow, setEyebrow] = useState("");
@@ -47,7 +41,13 @@ function CardForm(props: any) {
       <Paper>
         <FormGroup>
           <form onSubmit={createCard}>
-            <Grid container direction="row" spacing={.5} justifyContent="center"  alignItems="center">
+            <Grid
+              container
+              direction="row"
+              spacing={0.5}
+              justifyContent="center"
+              alignItems="center"
+            >
               <Grid item>
                 <TextField
                   name="Eyebrow Text"

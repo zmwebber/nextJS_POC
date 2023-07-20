@@ -1,7 +1,5 @@
-import Image from "next/image";
 import CardForm from "./components/CardForm/CardForm";
 import CardContainer from "./components/Card/CardContainer";
-import { Padding } from "@mui/icons-material";
 import { Grid } from "@mui/material";
 
 export default function Home() {
@@ -18,7 +16,7 @@ export default function Home() {
           <h1>Next JS with NodeJS and MongoDB</h1>
         </Grid>
         <br />
-        <Grid container item xs={8} justifyContent="center"  alignItems="center">
+        <Grid container item xs={8} justifyContent="center" alignItems="center">
           <Grid item xs={8}>
             <h2>Add Cards</h2>
           </Grid>
@@ -27,7 +25,7 @@ export default function Home() {
           </Grid>
         </Grid>
         <br />
-        <Grid container item xs={8} justifyContent="center"  alignItems="center">
+        <Grid container item xs={8} justifyContent="center" alignItems="center">
           <Grid item xs={8}>
             <h2>Card Container</h2>
           </Grid>

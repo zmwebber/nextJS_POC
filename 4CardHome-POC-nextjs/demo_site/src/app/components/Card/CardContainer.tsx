@@ -21,7 +21,7 @@ const CardContainer = () => {
     let response = await getCards();
     if (response) {
       if (response.success == true && response.cards) {
-        console.log("Response: " + JSON.stringify(response.cards));
+        // console.log("Response: " + JSON.stringify(response.cards));
         let cards = JSON.stringify(response.cards);
         let cardArray: Array<CardModel> = JSON.parse(cards);
         setCards(cardArray);
@@ -135,13 +135,13 @@ const CardContainer = () => {
             </ToggleButton>
           </ToggleButtonGroup>
         </Grid>
-        <Grid container item spacing={.5} xs={12}>
+        <Grid container item spacing={0.5} xs={12}>
           {filteredCards.map((card, index) => (
             <Grid item xs={3} key={index}>
               <CardComponent card={card} />
             </Grid>
           ))}
-        </Grid>{" "}
+        </Grid>
       </Grid>
     </>
   );
