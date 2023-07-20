@@ -28,7 +28,7 @@ export default function CardComponent(props: any) {
     <>
       <Grid item xs={3}>
         <Paper>
-      <Card sx={{ width: 250, height: 500 }}>
+      <Card sx={{ width: 250, height: 475 }}>
       <CardHeader
         title={props.card.title}
         subheader={props.card.eyebrow}
@@ -38,16 +38,19 @@ export default function CardComponent(props: any) {
         component="img"
         image='/family.jpg'
         alt="FamilyImage"
-        sx={{height: 150}}
+        sx={{height: 125, objectFit:'scale-down'}}
       />
-      <CardContent  sx={{height: 150}}>
+      <CardContent  sx={{height: 125}}>
         
         <Typography variant="body2" color="text.secondary">
-          {props.card.body}
+          <p> {props.card.body}</p>
+          <p>Order:{props.card.order}</p>
+          <p>Created At: {props.card.createdAt}</p>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>       
       <Link href={props.card.cta}>
+        Click to Learn More
         <IconButton aria-label="cta">
           <ArrowForwardIcon />
         </IconButton> 
