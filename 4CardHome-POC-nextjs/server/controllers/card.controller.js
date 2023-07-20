@@ -105,4 +105,24 @@ export const getAllCards = asyncHandler(async (req, res) => {
   }
 });
 
-export default { createCard, updateCard, removeCard, getAllCards };
+// @desc    Get random cards
+// @route   GET /api/cards/getRandom
+// @access  Private
+export const getRandomCards = asyncHandler(async (req, res) => {
+  const cards = await Card.aggregate([{ $sample: { size: 4 } }])
+  if (cards) {
+    res.status(201).json({
+      success: true,
+      message: "cards retrieved successfully",
+      cards: cards,
+    });
+  } else {
+    res.status(400).json({
+      success: false,
+      message: "cannot find cards",
+      cards: cards,
+    });
+  }
+});
+
+export default { createCard, updateCard, removeCard, getAllCards, getRandomCards };
